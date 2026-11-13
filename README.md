@@ -18,6 +18,15 @@ The final framework uses a **Hybrid ranking model** with fixed weights:
 
 The project also includes merchant segmentation, historical ranking evaluation, fraud-risk analysis, and a final onboarding recommendation.
 
+## My contribution
+
+*This was a group project. This repo is a fork of the team repo, kept here for my portfolio.*
+
+My parts of the project:
+
+- **External ABS data (SA2).** Sourced the ABS Census and SEIFA data and built the link from customer postcodes to SA2 regions using a population-weighted postcode → Mesh Block → SA2 mapping (2,644 postcodes, 5,904 postcode-to-SA2 pairs, 83.4% of consumers assigned). This is what feeds the household income and IRSAD features in the ranking. See [`scripts/download_external_sa2.py`](scripts/download_external_sa2.py), [`scripts/join_external_sa2.py`](scripts/join_external_sa2.py) and [`notebooks/abs_sa2.ipynb`](notebooks/abs_sa2.ipynb).
+- **Merchant segmentation.** Built the segmentation that groups the 4,026 merchants into four behavioural segments (Established, Rising, Fading, Intermittent). This lets the team rank merchants within each segment, so smaller or growing merchants that never make the overall Top 100 still show up. See [`scripts/segment_merchants.py`](scripts/segment_merchants.py), [`scripts/segment_behaviour.py`](scripts/segment_behaviour.py) and [`notebooks/segmentation.ipynb`](notebooks/segmentation.ipynb).
+
 ## Project Timeline
 
 The project was organised into six development sprints, followed by the final presentation in Week 11.
